@@ -14,12 +14,12 @@ const PetCard = ({ pet }) => {
 
   const isUserLoggedIn = true; 
 
-//   const handleAuthCheck = (e) => {
-//     if (!isUserLoggedIn) {
-//       e.preventDefault(); 
-//       router.push("/login"); 
-//     }
-//   };
+  const handleAuthCheck = (e) => {
+    if (!isUserLoggedIn) {
+      e.preventDefault(); 
+      router.push("/login"); 
+    }
+  };
 
   const speciesLower = species?.toLowerCase();
   const innerCardBg = 
