@@ -56,14 +56,14 @@ useEffect(() => {
       <nav className="w-full max-w-7xl bg-surface border-3 border-outline shadow-[0_6px_0_0_theme(colors.outline)] flex items-center justify-between px-4 md:px-6 py-2.5 transition-colors duration-200 rounded-[32px]">
         
         {/* LOGO */}
-        <Link href="/" className="flex items-center gap-2 md:gap-3 select-none hover:opacity-90 transition-opacity">
+        {/* <Link href="/" className="flex items-center gap-2 md:gap-3 select-none hover:opacity-90 transition-opacity">
           <div className="w-9 h-9 md:w-10 md:h-10 bg-accent rounded-full flex items-center justify-center border-2 border-outline shadow-[1.5px_1.5px_0_0_theme(colors.outline)]">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" className="w-5 h-5">
               <path d="M12 14c-1.66 0-3 1.34-3 3 0 2 2 3.5 3 3.5s3-1.5 3-3.5c0-1.66-1.34-3-3-3zm-4.5-2c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm9 0c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-6.75-3.5c.97 0 1.75-.78 1.75-1.75S10.97 5 10 5s-1.75.78-1.75 1.75S9.03 8.5 10 8.5zm4 0c.97 0 1.75-.78 1.75-1.75S14.97 5 14 5s-1.75.78-1.75 1.75S13.03 8.5 14 8.5z"/>
             </svg>
           </div>
           <span className="font-black text-xl md:text-2xl text-main tracking-tight hidden sm:block">PetNest</span>
-        </Link>
+        </Link> */}
 
         {/* DESKTOP LINKS */}
         <div className="hidden md:flex items-center gap-2 font-black text-sm uppercase tracking-wider text-main">
