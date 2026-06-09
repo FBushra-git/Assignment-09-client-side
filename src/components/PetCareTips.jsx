@@ -4,12 +4,12 @@ import React from "react";
 import Image from "next/image"; 
 
 export default function PetCareTips() {
-//   const tips = [
-//     { emoji: "🥣", text: "Keep meals consistent for the first 2 weeks" },
-//     { emoji: "🧸", text: "Create a quiet, cozy corner just for them" },
-//     { emoji: "🦺", text: "Short, calm outings — no overwhelming crowds" },
-//     { emoji: "🩺", text: "Book a vet wellness visit within 7 days" },
-//   ];
+  const tips = [
+    { emoji: "🥣", text: "Keep meals consistent for the first 2 weeks" },
+    { emoji: "🧸", text: "Create a quiet, cozy corner just for them" },
+    { emoji: "🦺", text: "Short, calm outings — no overwhelming crowds" },
+    { emoji: "🩺", text: "Book a vet wellness visit within 7 days" },
+  ];
 
   return (
     <div 
