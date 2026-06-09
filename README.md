@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# PetNest: Pet Adoption Platform
 
-## Getting Started
+PetNest is a comprehensive full-stack MERN (MongoDB, Express, React, Node.js) application designed to facilitate the seamless adoption of pets. Whether you are looking to find your next furry companion or a shelter aiming to manage listings, PetNest provides a secure and intuitive portal for all adoption workflows.
 
-First, run the development server:
+## Live URL
+[Insert your live website URL here]
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Purpose
+The purpose of PetNest is to digitize the pet adoption process. It serves as a centralized platform where users can browse various species, submit adoption requests, and manage their status, while pet owners can efficiently manage their listings, monitor requests, and approve or reject prospective adopters.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
+* **Dynamic Pet Directory:** Advanced browsing system with search (by name), filter (by species), and sorting (by adoption fee) capabilities using MongoDB operators.
+* **Secure Authentication:** JWT-based authentication with HTTPOnly cookies to protect private routes and user data.
+* **Role-Based Management:** Dedicated dashboards for pet owners to manage listings and requests, and for adopters to track their application status.
+* **CRUD Operations:** Full Create, Read, Update, and Delete functionality for pet listings and adoption requests.
+* **Interactive Adoption Workflow:** Real-time adoption status tracking with approval/rejection logic and automatic pet status updates upon adoption.
+* **Theme Customization:** Seamless toggle between Light and Dark modes for better user accessibility and comfort.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## NPM Packages Used
+* **Frontend:** `next`, `react`, `lucide-react`, `react-hot-toast`, `framer-motion`
+* **Backend:** `express`, `mongodb`, `jsonwebtoken`, `cookie-parser`, `cors`, `dotenv`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Technology Stack
+* **Frontend:** React, Next.js, Tailwind CSS
+* **Backend:** Node.js, Express.js
+* **Database:** MongoDB
+* **Authentication:** JWT, HTTPOnly Cookies, BetterAuth
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## How it Works
+1.  **Browse:** Users can explore all available pets through the main directory.
+2.  **Authenticate:** Users log in to gain access to adoption features.
+3.  **Adopt:** Logged-in users submit adoption requests through detailed pet profiles.
+4.  **Manage:** Pet owners can view requests on their dashboard, approve or reject them, and maintain their own pet listings.
+5.  **Track:** All users can monitor the status of their submitted requests through the "My Requests" dashboard.
