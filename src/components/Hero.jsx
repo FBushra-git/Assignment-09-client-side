@@ -6,26 +6,26 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 export default function HeroBanner() {
-//   const cardRef = useRef(null);
-//   const x = useMotionValue(0);
-//   const y = useMotionValue(0);
+  const cardRef = useRef(null);
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
 
-//   const rotateX = useSpring(useTransform(y, [-0.5, 0.5], [7, -7]), { stiffness: 150, damping: 20 });
-//   const rotateY = useSpring(useTransform(x, [-0.5, 0.5], [-7, 7]), { stiffness: 150, damping: 20 });
+  const rotateX = useSpring(useTransform(y, [-0.5, 0.5], [7, -7]), { stiffness: 150, damping: 20 });
+  const rotateY = useSpring(useTransform(x, [-0.5, 0.5], [-7, 7]), { stiffness: 150, damping: 20 });
 
-//   const handleMouseMove = (e) => {
-//     if (!cardRef.current) return;
-//     const rect = cardRef.current.getBoundingClientRect();
-//     const mouseX = (e.clientX - rect.left) / rect.width - 0.5;
-//     const mouseY = (e.clientY - rect.top) / rect.height - 0.5;
-//     x.set(mouseX);
-//     y.set(mouseY);
-//   };
+  const handleMouseMove = (e) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const mouseX = (e.clientX - rect.left) / rect.width - 0.5;
+    const mouseY = (e.clientY - rect.top) / rect.height - 0.5;
+    x.set(mouseX);
+    y.set(mouseY);
+  };
 
-//   const handleMouseLeave = () => {
-//     x.set(0);
-//     y.set(0);
-//   };
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
 
   const router = useRouter();
 
