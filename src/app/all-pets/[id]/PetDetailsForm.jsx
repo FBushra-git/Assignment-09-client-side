@@ -16,7 +16,7 @@ const PetDetailsForm = ({ pet, user }) => {
      
     const {data:tokenData} = await authClient.token();
   
-    const response = await fetch(`http://localhost:5000/adopt-requests`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/adopt-requests`, {
       method: "POST",
       headers: { "Content-Type": "application/json" ,
        authorization: `Bearer ${tokenData?.token}` 

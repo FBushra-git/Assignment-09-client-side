@@ -44,7 +44,7 @@ export default function MyListingsDashboard() {
         // Safe time conversion extraction before embedding into string generation paths
         const timestamp = new Date().getTime();
          const {data:tokenData} = await authClient.token();
-        const res = await fetch(`http://localhost:5000/add-pet?t=${timestamp}`, { 
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/add-pet?t=${timestamp}`, { 
           method: "GET",
           headers: {
             "Cache-Control": "no-cache, no-store, must-revalidate",
@@ -88,7 +88,7 @@ export default function MyListingsDashboard() {
   try {
     const {data:tokenData} = await authClient.token();
     const timestamp = new Date().getTime();
-    const res = await fetch(`http://localhost:5000/adopt-requests?t=${timestamp}`,
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/adopt-requests?t=${timestamp}`,
       {
         headers: {
         authorization: `Bearer ${tokenData?.token}`
@@ -126,7 +126,7 @@ export default function MyListingsDashboard() {
     
     try {
       const {data:tokenData} = await authClient.token();
-      const res = await fetch(`http://localhost:5000/add-pet/${petId}`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/add-pet/${petId}`, {
         method: "DELETE",
         headers:{
           authorization: `Bearer ${tokenData?.token}`
@@ -355,7 +355,7 @@ const metricsAdoptedCount = myPets.filter(
                 const handleUpdateStatus = async (targetStatus) => {
                   try {
                     const {data:tokenData} = await authClient.token();
-                    const res = await fetch(`http://localhost:5000/adopt-requests/${requestId}`, {
+                    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/adopt-requests/${requestId}`, {
                       method: "PATCH",
                       headers: { "Content-Type": "application/json",
                         authorization: `Bearer ${tokenData?.token}`
@@ -367,7 +367,7 @@ const metricsAdoptedCount = myPets.filter(
                     if (res.ok && data.success) {
                       toast.success(`Application has been ${targetStatus}!`);
                       const {data:tokenData} = await authClient.token();
-                      const refresh = await fetch(`http://localhost:5000/add-pet?t=` + Date.now(),
+                      const refresh = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/add-pet?t=` + Date.now(),
                     {
                       headers: {
                         authorization: `Bearer ${tokenData?.token}`

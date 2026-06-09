@@ -17,7 +17,7 @@ export default function HomePage() {
   useEffect(() => {
     const fetchFeatured = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/all-pets`, { cache: "no-store" });
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/all-pets`, { cache: "no-store" });
         if (!res.ok) throw new Error("Could not pull homepage dataset");
         const data = await res.json();
         

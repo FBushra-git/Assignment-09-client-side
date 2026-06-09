@@ -40,7 +40,7 @@ const [totalPets, setTotalPets] = useState(0);
       if (sortOrder) queryBuilder.append("sort", sortOrder);
 
       const res = await fetch(
-        `http://localhost:5000/all-pets?${queryBuilder.toString()}&page=${page}&limit=9`,
+        `${process.env.NEXT_PUBLIC_SERVER_URL}/all-pets?${queryBuilder.toString()}&page=${page}&limit=9`,
         { cache: "no-store" }
       );
       console.log(res)

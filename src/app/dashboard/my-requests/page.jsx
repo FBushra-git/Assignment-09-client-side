@@ -21,7 +21,7 @@ const MyRequestsPage =  () => {
     const fetchUserApplications = async () => {
       try {
         const {data:tokenData} = await authClient.token();
-        const res = await fetch("http://localhost:5000/adopt-requests", { 
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/adopt-requests`, { 
           cache: "no-store",
         headers: {
         Authorization: `Bearer ${tokenData.token}`,
@@ -56,7 +56,7 @@ const MyRequestsPage =  () => {
 
     try {
        const { data: tokenData } = await authClient.token();
-      const res = await fetch(`http://localhost:5000/adopt-requests/${requestId}`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/adopt-requests/${requestId}`, {
         method: "DELETE",
          headers: {
           Authorization: `Bearer ${tokenData.token}`,

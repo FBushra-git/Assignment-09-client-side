@@ -26,7 +26,7 @@ export default function UpdatePetProfilePage() {
     const fetchPet = async () => {
       try {
          const {data:tokenData} = await authClient.token();
-        const res = await fetch(`http://localhost:5000/add-pet/${petId}`,{
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/add-pet/${petId}`,{
           headers:{
 
             authorization: `Bearer ${tokenData.token}`
@@ -66,7 +66,7 @@ export default function UpdatePetProfilePage() {
     e.preventDefault();
     try {
       const {data:tokenData} = await authClient.token()
-      const res = await fetch(`http://localhost:5000/add-pet/${petId}`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/add-pet/${petId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json",
           authorization: `Bearer ${tokenData?.token}`
