@@ -89,21 +89,21 @@ export default function UpdatePetProfilePage() {
   if (loading) return <div className="min-h-screen flex items-center justify-center font-black">Loading...</div>;
 
   return (
-    <div className="min-h-screen bg-[#f9f3eb] py-12 px-4 font-sans text-[#2d1e18]">
+    <div className="min-h-screen bg-[var(--bg-canvas)] py-12 px-4 font-sans text-[var(--text-main)]">
       <Toaster position="top-center" />
       <div className="max-w-2xl mx-auto">
-        <button onClick={() => router.push("/dashboard/my-listings")} className="mb-6 flex items-center gap-1.5 text-xs font-black uppercase tracking-wider hover:text-[#ff7660]">
+        <button onClick={() => router.push("/dashboard/my-listings")} className="mb-6 flex items-center gap-1.5 text-xs font-black uppercase tracking-wider hover:text-[var(--btn-primary)]">
           <ArrowLeft size={14} /> Back to Dashboard
         </button>
-        <div className="bg-[#fffdf9] border-4 border-[#2d1e18] rounded-[32px] p-6">
-          <h1 className="text-2xl font-black uppercase mb-6">Update Profile</h1>
+        <div className="bg-[var(--bg-card)] border-4 border-[var(--outline-border)] rounded-[32px] p-6">
+          <h1 className="text-2xl font-black uppercase mb-6 text-[var(--text-main)]">Update Profile</h1>
           <form onSubmit={handleFormSubmission} className="space-y-4">
-            <input name="petName" value={formData.petName} onChange={handleInputChange} className="w-full h-11 px-4 border-2 border-[#2d1e18] rounded-xl" placeholder="Pet Name" />
-            <input name="species" value={formData.species} onChange={handleInputChange} className="w-full h-11 px-4 border-2 border-[#2d1e18] rounded-xl" placeholder="Species" />
-            <input name="imageUrl" value={formData.imageUrl} onChange={handleInputChange} className="w-full h-11 px-4 border-2 border-[#2d1e18] rounded-xl" placeholder="Image URL" />
-            <input type="number" name="adoptionFee" value={formData.adoptionFee} onChange={handleInputChange} className="w-full h-11 px-4 border-2 border-[#2d1e18] rounded-xl" />
-            <textarea name="description" value={formData.description} onChange={handleInputChange} className="w-full p-4 border-2 border-[#2d1e18] rounded-xl" rows="4"></textarea>
-            <button type="submit" className="w-full h-12 rounded-xl bg-[#ff7660] text-white font-black uppercase">Save Changes</button>
+            <input name="petName" value={formData.petName} onChange={handleInputChange} className="w-full h-11 px-4 border-2 border-[var(--outline-border)] rounded-xl bg-[var(--bg-canvas)] text-[var(--text-main)]" placeholder="Pet Name" />
+            <input name="species" value={formData.species} onChange={handleInputChange} className="w-full h-11 px-4 border-2 border-[var(--outline-border)] rounded-xl bg-[var(--bg-canvas)] text-[var(--text-main)]" placeholder="Species" />
+            <input name="imageUrl" value={formData.imageUrl} onChange={handleInputChange} className="w-full h-11 px-4 border-2 border-[var(--outline-border)] rounded-xl bg-[var(--bg-canvas)] text-[var(--text-main)]" placeholder="Image URL" />
+            <input type="number" name="adoptionFee" value={formData.adoptionFee} onChange={handleInputChange} className="w-full h-11 px-4 border-2 border-[var(--outline-border)] rounded-xl bg-[var(--bg-canvas)] text-[var(--text-main)]" />
+            <textarea name="description" value={formData.description} onChange={handleInputChange} className="w-full p-4 border-2 border-[var(--outline-border)] rounded-xl bg-[var(--bg-canvas)] text-[var(--text-main)]" rows="4"></textarea>
+            <button type="submit" className="w-full h-12 rounded-xl bg-[var(--btn-primary)] text-[var(--btn-text)] font-black uppercase">Save Changes</button>
           </form>
         </div>
       </div>

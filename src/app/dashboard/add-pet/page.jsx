@@ -98,7 +98,7 @@ const AddPetForm = ({ user }) => {
     <div className="w-full font-sans text-berry-ink">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-3xl font-black text-berry-ink uppercase tracking-tight mb-6">
-          Add Pet <span className="text-[#ff7660]">Listing</span> 🐾
+          Add Pet <span className="text-[var(--btn-primary)]">Listing</span> 🐾
         </h1>
 
         {message.text && (
@@ -204,7 +204,7 @@ const AddPetForm = ({ user }) => {
               <div className="md:col-span-2">
                 <div className="flex flex-col gap-1">
                   <span className="font-black text-[10px] uppercase tracking-wider text-berry-ink/50">Owner Account Context</span>
-                  <div className="w-full bg-[#fff5f8]/40 border-2 border-dashed border-brutalist-outline/20 rounded-xl px-4 py-2 text-xs font-bold text-berry-ink/60 select-none">
+                  <div className="w-full bg-[var(--bg-canvas)] border-2 border-dashed border-brutalist-outline/20 rounded-xl px-4 py-2 text-xs font-bold text-[var(--text-main)]/60 select-none">
                     {user.email}
                   </div>
                 </div>
@@ -215,7 +215,7 @@ const AddPetForm = ({ user }) => {
               <Button type="reset" className="h-10 px-5 rounded-full border-2 border-brutalist-outline bg-rose-50 text-rose-700 font-black text-xs uppercase tracking-wider shadow-[2px_2px_0_0_theme(colors.brutalist-outline)] active:scale-95 cursor-pointer flex items-center justify-center gap-1.5">
                 <TrashIcon className="w-3.5 h-3.5 stroke-[2.5]" /> Clear Form
               </Button>
-              <Button type="submit" disabled={loading} className="h-10 px-6 rounded-full border-2 border-brutalist-outline bg-[#ff7660] text-white font-black text-xs uppercase tracking-wider shadow-[2px_2px_0_0_theme(colors.brutalist-outline)] active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-1.5 cursor-pointer">
+              <Button type="submit" disabled={loading} className="h-10 px-6 rounded-full border-2 border-brutalist-outline bg-[var(--btn-primary)] text-[var(--btn-text)] font-black text-xs uppercase tracking-wider shadow-[2px_2px_0_0_theme(colors.brutalist-outline)] active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-1.5 cursor-pointer">
                 <DocumentCheckIcon className="w-4 h-4 stroke-[2.5]" /> {loading ? "Publishing..." : "Add Pet Listing"}
               </Button>
             </div>
@@ -229,17 +229,17 @@ const AddPetForm = ({ user }) => {
 const AccessDeniedState = () => {
   const router = useRouter();
   return (
-    <div className="w-full flex items-center justify-center py-12 font-sans text-berry-ink">
-      <div className="max-w-sm w-full bg-[#fffdf9] p-6 text-center border-2 border-brutalist-outline rounded-[24px] shadow-[4px_4px_0_0_theme(colors.brutalist-outline)]">
+    <div className="w-full flex items-center justify-center py-12 font-sans text-[var(--text-main)]">
+      <div className="max-w-sm w-full bg-[var(--bg-card)] p-6 text-center border-2 border-brutalist-outline rounded-[24px] shadow-[4px_4px_0_0_theme(colors.brutalist-outline)]">
         <div className="w-12 h-12 bg-rose-100 rounded-full border-2 border-brutalist-outline flex items-center justify-center mx-auto mb-4">
           <LockClosedIcon className="w-6 h-6 text-rose-600 stroke-[2.5]" />
         </div>
-        <h2 className="text-xl font-black uppercase mb-1">Members Only! 🔒</h2>
-        <p className="text-xs font-bold text-berry-ink/60 mb-5 leading-relaxed">
+        <h2 className="text-xl font-black uppercase mb-1 text-[var(--text-main)]">Members Only! 🔒</h2>
+        <p className="text-xs font-bold text-[var(--text-main)]/60 mb-5 leading-relaxed">
           You need to be logged into an active pet caretaker account to list a pet for adoption.
         </p>
         <div className="flex flex-col gap-2">
-          <Button onClick={() => router.push("/login")} className="w-full h-10 rounded-full border-2 border-brutalist-outline bg-[#ff7660] text-white font-black text-xs uppercase tracking-wider shadow-[2px_2px_0_0_theme(colors.brutalist-outline)] cursor-pointer">
+          <Button onClick={() => router.push("/login")} className="w-full h-10 rounded-full border-2 border-brutalist-outline bg-[var(--btn-primary)] text-[var(--btn-text)] font-black text-xs uppercase tracking-wider shadow-[2px_2px_0_0_theme(colors.brutalist-outline)] cursor-pointer">
             Log In to Account
           </Button>
         </div>

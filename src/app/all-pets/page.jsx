@@ -139,7 +139,7 @@ setTotalPets(data.total);
         {/* METRICS COUNTER MATRIX STATUS INDICATOR STRIP */}
         {!loading && (
           <div className="flex items-center gap-2 mb-8 px-1 animate-in fade-in slide-in-from-bottom-2 duration-200">
-            <span className="inline-flex items-center justify-center bg-[#ccfbf1] text-teal-900 font-black text-xs uppercase tracking-wider px-4 py-1.5 rounded-full border-2 border-brutalist-outline shadow-[3px_3px_0_0_theme(colors.brutalist-outline)]">
+            <span className="inline-flex items-center justify-center bg-[var(--bg-card)]/50 text-[var(--text-main)] font-black text-xs uppercase tracking-wider px-4 py-1.5 rounded-full border-2 border-brutalist-outline shadow-[3px_3px_0_0_theme(colors.brutalist-outline)]">
               🐾 {totalPets} {totalPets === 1 ? "Pet" : "Pets"} Available Right Now
             </span>
             {searchText && (
@@ -187,7 +187,7 @@ setTotalPets(data.total);
                     
                     {/* Adoption Fee / Solid Red Status Badge Ribbon Row Overlay */}
                     <div className={`absolute top-2 right-2 border-2 border-brutalist-outline px-3 py-1 rounded-full text-xs font-black shadow-[2px_2px_0_0_theme(colors.brutalist-outline)] z-10 ${
-                      isAdopted ? "bg-[#ef4444] text-white" : "bg-card-surface"
+                      isAdopted ? "bg-red-500 text-white" : "bg-card-surface"
                     }`}>
                       {isAdopted ? "Adopted 🎉" : pet.adoptionFee > 0 ? `$${pet.adoptionFee}` : "Free"}
                     </div>
@@ -195,14 +195,14 @@ setTotalPets(data.total);
 
                   {/* Header Identification Block Information Fields */}
                   <div className="mb-3 flex justify-between items-baseline px-1">
-                    <h3 className="text-2xl font-black tracking-tight">{pet.petName}</h3>
-                    <span className="text-[10px] font-black uppercase bg-[#ffe4cc] border border-brutalist-outline rounded-full px-2.5 py-0.5 tracking-wider">
+                    <h3 className="text-2xl font-black tracking-tight text-[var(--text-main)]">{ pet.petName}</h3>
+                    <span className="text-[10px] font-black uppercase bg-[var(--btn-primary)]/20 border border-brutalist-outline rounded-full px-2.5 py-0.5 tracking-wider text-[var(--text-main)]">
                       {pet.species}
                     </span>
                   </div>
 
                   {/* Summary Profile Bio Description Box Text Details */}
-                  <p className="text-xs text-[#8a7a73] font-medium line-clamp-2 px-1 mb-6">
+                  <p className="text-xs text-[var(--text-main)]/60 font-medium line-clamp-2 px-1 mb-6">
                     {pet.description || "No biography overview profiles filed yet for this registration matrix row details block."}
                   </p>
 
@@ -223,7 +223,7 @@ setTotalPets(data.total);
     className={`w-full h-11 rounded-full border-2 border-brutalist-outline font-black text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 ${
       isAdopted
         ? "bg-gray-300 text-gray-500 border-gray-400 shadow-none cursor-not-allowed"
-        : "bg-[#ffe4cc] hover:bg-[#ffd5b3] text-berry-ink shadow-[0_3px_0_0_theme(colors.brutalist-outline)] active:translate-y-[1.5px] active:shadow-[0_1.5px_0_0_theme(colors.brutalist-outline)] cursor-pointer"
+        : "bg-[var(--btn-primary)]/20 hover:bg-[var(--btn-primary)]/30 text-[var(--text-main)] shadow-[0_3px_0_0_theme(colors.brutalist-outline)] active:translate-y-[1.5px] active:shadow-[0_1.5px_0_0_theme(colors.brutalist-outline)] cursor-pointer"
     }`}
   >
     <HeartHandshake size={14} className="stroke-[2.5]" />
@@ -264,7 +264,7 @@ setTotalPets(data.total);
             onClick={() => setPage(pageNum)}
             className={`w-10 h-10 rounded-full border-2 border-brutalist-outline font-black text-xs transition-all ${
               page === pageNum 
-                ? "bg-[#ff7660] text-white shadow-[2px_2px_0_0_theme(colors.brutalist-outline)]" 
+                ? "bg-[var(--btn-primary)] text-[var(--btn-text)] shadow-[2px_2px_0_0_theme(colors.brutalist-outline)]" 
                 : "bg-card-surface hover:bg-amber-50"
             }`}
           >

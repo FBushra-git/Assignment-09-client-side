@@ -38,7 +38,7 @@ export default function HomePage() {
       <Hero />
 
       {/* 2. Dynamic Featured Pets Section */}
-      <section className="max-w-7xl mx-auto px-4 py-20 font-sans text-[#2d1e18]">
+      <section className="max-w-7xl mx-auto px-4 py-20 font-sans text-[var(--text-main)]">
         
         {/* Section Header Text and Links */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
@@ -46,14 +46,14 @@ export default function HomePage() {
             <h2 className="text-3xl md:text-4xl font-black tracking-tight">
               Meet Our Newest Friends 🐾
             </h2>
-            <p className="text-sm font-bold text-[#2d1e18]/60 mt-1">
+            <p className="text-sm font-bold text-[var(--text-main)]/60 mt-1">
               Some of our latest lovable arrivals looking for a home
             </p>
           </div>
           
           <Link 
             href="/all-pets" 
-            className="group text-sm font-black uppercase tracking-widest text-[#ff7660] flex items-center gap-1.5 hover:text-[#ff624a] transition-colors"
+            className="group text-sm font-black uppercase tracking-widest text-[var(--btn-primary)] flex items-center gap-1.5 hover:text-[var(--btn-primary-hover)] transition-colors"
           >
             See More Pets 
             <span className="transition-transform group-hover:translate-x-1">→</span>
@@ -62,12 +62,12 @@ export default function HomePage() {
 
         {/* Loading and Card Loop Layout */}
         {loading ? (
-          <div className="text-center py-12 font-black text-[#2d1e18]/60">
+          <div className="text-center py-12 font-black text-[var(--text-main)]/60">
             Fetching featured profiles... 🐾
           </div>
         ) : featuredPets.length === 0 ? (
-          <div className="text-center py-16 bg-[#fffdf9] rounded-[24px] border-3 border-[#2d1e18] shadow-[4px_4px_0_0_#2d1e18]">
-            <p className="font-black text-[#2d1e18]/50">No pets currently featured.</p>
+          <div className="text-center py-16 bg-[var(--bg-card)] rounded-[24px] border-3 border-[var(--outline-border)] shadow-[4px_4px_0_0_var(--outline-border)]">
+            <p className="font-black text-[var(--text-main)]/50">No pets currently featured.</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

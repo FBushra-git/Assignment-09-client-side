@@ -6,6 +6,11 @@
   --color-main: var(--text-main);
   --color-accent: var(--text-accent);
   --color-outline: var(--outline-border);
+  --color-btn-primary: var(--btn-primary);
+  --color-btn-primary-hover: var(--btn-primary-hover);
+  --color-btn-secondary: var(--btn-secondary);
+  --color-btn-secondary-hover: var(--btn-secondary-hover);
+  --color-btn-text: var(--btn-text);
 }
 
 :root {
@@ -14,19 +19,34 @@
   --text-main: #2d1e18;
   --text-accent: #ff7660;
   --outline-border: #2d1e18;
+  --btn-primary: #ff7660;
+  --btn-primary-hover: #ff624a;
+  --btn-secondary: #fffcf9;
+  --btn-secondary-hover: #fbf5ee;
+  --btn-text: #ffffff;
 }
 
 .dark {
-  /* Slightly warmer, less "inky" black */
-  --bg-canvas: #1f1b1a; 
-  /* Softer, more muted card surface */
-  --bg-card: #2b2524; 
-  /* Muted off-white instead of harsh #ffffff */
-  --text-main: #a49a96; 
-  /* Softer peach/muted coral to prevent eye-vibration */
-  --text-accent: #ff9b8a; 
-  /* Slightly lighter outline to reduce contrast strain */
-  --outline-border: #5c524f; 
+  /* Dark purple background for toggle */
+  --bg-canvas: #2a1a3a; 
+  /* Medium purple for cards */
+  --bg-card: #3d2652; 
+  /* Cream/white text */
+  --text-main: #fffef0; 
+  /* Lighter purple/lavender accent */
+  --text-accent: #d4a5e6; 
+  /* Medium purple for borders */
+  --outline-border: #6d4a7d; 
+  /* Purple primary button */
+  --btn-primary: #9d6bb7;
+  /* Lighter purple on hover */
+  --btn-primary-hover: #b896d4;
+  /* Dark card background for secondary button */
+  --btn-secondary: #2b2524;
+  /* Slightly lighter secondary hover */
+  --btn-secondary-hover: #3d3531;
+  /* Light text for buttons */
+  --btn-text: #fffef0;
 }
 
 /* Base body reset */

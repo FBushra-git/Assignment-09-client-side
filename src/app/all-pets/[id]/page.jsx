@@ -31,7 +31,7 @@ const pet = await res.json();
   if (!pet) return <div className="p-10 text-center font-black">Pet not found.</div>;
 
   return (
-    <div className="min-h-screen bg-[#f9f3eb]">
+    <div className="min-h-screen bg-[var(--bg-canvas)]">
       <PetDetailsForm pet={pet} user={session?.user} />
     </div>
   );
