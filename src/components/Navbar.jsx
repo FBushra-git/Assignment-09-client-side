@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect, useSyncExternalStore } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTheme } from "next-themes";
@@ -18,6 +18,7 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [imgError, setImgError] = useState(false);
+  const isMounted = useSyncExternalStore(() => () => {}, () => true, () => false);
   const dropdownRef = useRef(null);
 
 useEffect(() => {
@@ -81,7 +82,11 @@ useEffect(() => {
             className="w-10 h-10 flex items-center justify-center rounded-full border-2 border-outline bg-surface hover:bg-accent/10 transition-all shadow-[2px_2px_0_0_theme(colors.outline)]"
             aria-label="Toggle Theme"
           >
-            {resolvedTheme === "dark" ? <Sun size={18} className="text-main" /> : <Moon size={18} className="text-main" />}
+            {isMounted ? (
+              resolvedTheme === "dark" ? <Sun size={18} className="text-main" /> : <Moon size={18} className="text-main" />
+            ) : (
+              <span className="h-[18px] w-[18px]" aria-hidden="true" />
+            )}
           </button>
 
           {user ? (

@@ -16,15 +16,22 @@ export default function HomePage() {
   // Fetch pets data for the homepage display
   useEffect(() => {
     const fetchFeatured = async () => {
+      const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL;
+
+      if (!serverUrl) {
+        setLoading(false);
+        return;
+      }
+
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/all-pets`, { cache: "no-store" });
-        if (!res.ok) throw new Error("Could not pull homepage dataset");
+        const res = await fetch(`${serverUrl}/all-pets`, { cache: "no-store" });
+        if (!res.ok) return;
         const data = await res.json();
-        
+
         // Take only the first 3 pets for a clean landing page showcase row
-        setFeaturedPets(data.pets.slice(0, 3));
-      } catch (error) {
-        console.error("Error loading home view items:", error);
+        setFeaturedPets((data.pets || []).slice(0, 3));
+      } catch {
+        setFeaturedPets([]);
       } finally {
         setLoading(false);
       }
